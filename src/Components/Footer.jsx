@@ -5,7 +5,7 @@ import {
   FaYoutube,
   FaWhatsapp,
 } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
