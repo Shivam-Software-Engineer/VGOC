@@ -9,6 +9,14 @@ import Services from './Pages/Services'
 import Contact from './Pages/Contact'
 import Testimonials from './Pages/Testimonials'
 import Gallery from './Pages/Gallery'
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init({
+  duration: 900,
+  once: true,
+  easing: "ease-out-cubic",
+});
 
 
 
