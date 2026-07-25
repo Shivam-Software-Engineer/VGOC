@@ -1,10 +1,8 @@
-import Footer from "../Components/Footer";
-import Header from "../Components/Header";
 
 const About = () => {
     return (
      <>
-     <Header/>
+  
 
      <section className="py-24 bg-gray-50">
   
@@ -43,7 +41,7 @@ const About = () => {
   </div>
 
 </section>
-     <Footer/>
+ 
      </>
     );
   };

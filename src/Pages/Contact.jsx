@@ -12,13 +12,11 @@ import {
   FaYoutube,
   FaWhatsapp,
 } from "react-icons/fa";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
 
 const Contact = () => {
   return (
    <>
-   <Header/>
+
    <section className="bg-gray-50 py-24">
       <div className="max-w-7xl mx-auto px-5">
         {/* Heading */}
@@ -228,7 +226,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-   <Footer/>
+
    </>
   );
 };

@@ -1,7 +1,5 @@
 import React from "react";
 import { Quote, User } from "lucide-react";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
 
 const testimonials = [
   {
@@ -121,7 +119,7 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <>
-    <Header/>
+
     <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-5">
         {/* Heading */}
@@ -199,7 +197,7 @@ const Testimonials = () => {
         </div>
         </div>
     </section>
-    <Footer/>
+ 
     </>
   );
 };

@@ -3,8 +3,6 @@ import services from "../Data/servicesData";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { CheckCircle, ArrowRight } from "lucide-react";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
 
 const Services = () => {
   useEffect(() => {
@@ -17,7 +15,7 @@ const Services = () => {
 
   return (
     <>
-    <Header />
+   
     <section className="services-section"> <section className="bg-gray-50">
 
 {/* Hero Section */}
@@ -172,7 +170,7 @@ const Services = () => {
 </section>
       
     </section>
-    <Footer />
+  
    </>
   );
 };

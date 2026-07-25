@@ -14,15 +14,15 @@
       
       return (
           <div>
-              <Header/>
+             
               <Carousel/>
               <AboutPreview/>
               <WhyChooseUs/>
               <OurClients/>
               <ServicesSection/>
 
-
-              <Footer/>
+     
+             
           </div>
       )
   }

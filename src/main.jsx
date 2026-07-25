@@ -11,6 +11,7 @@ import Testimonials from './Pages/Testimonials'
 import Gallery from './Pages/Gallery'
 import AOS from "aos";
 import "aos/dist/aos.css";
+import MainLayout from './Layout/MainLayout'
 
 AOS.init({
   duration: 900,
@@ -26,12 +27,14 @@ createRoot(document.getElementById('root')).render(
       
 
       <Routes>
+        <Route element={<MainLayout/>}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/testimonial" element={<Testimonials />} />
         <Route path="/gallery" element={<Gallery />} />
+        </Route>
       </Routes>
       
     </BrowserRouter>

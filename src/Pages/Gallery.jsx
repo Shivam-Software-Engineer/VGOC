@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
 
 const galleryImages = [
   "/Images/Gallery/1.jpeg",
@@ -14,7 +12,7 @@ const galleryImages = [
 const Gallery = () => {
   return (
     <>
-    <Header/>
+
     <section className="py-24 bg-gradient-to-b from-white via-orange-50 to-white overflow-hidden">
       <div className="max-w-[1450px] mx-auto px-5">
         {/* Heading */}
@@ -81,7 +79,7 @@ const Gallery = () => {
         </div>
       </div>
     </section>
-    <Footer/>
+
     </>
   );
 };
