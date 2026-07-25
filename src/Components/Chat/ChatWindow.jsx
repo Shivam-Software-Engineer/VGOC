@@ -16,46 +16,51 @@ const ChatWindow = ({
   bottomRef,
 }) => {
   return (
-    <div className="fixed bottom-24 right-6 z-[9999] flex h-[650px] w-[390px] flex-col overflow-hidden rounded-[28px] border border-gray-200 bg-white shadow-[0_20px_60px_rgba(0,0,0,.18)] max-sm:bottom-20 max-sm:right-2 max-sm:h-[82vh] max-sm:w-[95%]">
+    <div className="fixed bottom-24 right-5 z-[9998] flex h-[560px] w-[360px] flex-col overflow-hidden rounded-2xl border bg-white shadow-2xl max-sm:bottom-0 max-sm:right-0 max-sm:left-0 max-sm:h-[75vh] max-sm:w-full max-sm:rounded-b-none">
 
       {/* Header */}
-      <div className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 p-5 text-white">
 
-        <div className="flex items-center gap-4">
+      <div className="bg-gradient-to-r from-emerald-600 to-emerald-500 px-4 py-3 text-white">
+
+        <div className="flex items-center gap-3">
 
           <div className="relative">
 
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white text-emerald-600 shadow-lg">
-              <Bot size={28} />
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-emerald-600">
+
+              <Bot size={20} />
+
             </div>
 
-            <span className="absolute bottom-0 right-0 h-4 w-4 rounded-full border-2 border-white bg-lime-400"></span>
+            <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full border border-white bg-lime-400"></span>
 
           </div>
 
           <div>
-            <h2 className="text-lg font-bold">
+
+            <h2 className="text-sm font-semibold">
               VGOC Assistant
             </h2>
 
-            <p className="text-xs text-white/90">
-              Online • Usually replies instantly
+            <p className="text-[11px] opacity-90">
+              Online
             </p>
+
           </div>
 
         </div>
 
       </div>
 
-      {/* Contact Buttons */}
+      {/* Contact */}
 
-      <div className="grid grid-cols-2 border-b bg-white">
+      <div className="grid grid-cols-2 text-sm">
 
         <a
           href="tel:+919823550155"
-          className="flex items-center justify-center gap-2 border-r py-3 transition hover:bg-gray-50"
+          className="flex items-center justify-center gap-2 border-r py-2 hover:bg-gray-50"
         >
-          <Phone size={18} />
+          <Phone size={16} />
           Call
         </a>
 
@@ -63,9 +68,9 @@ const ChatWindow = ({
           href="https://wa.me/919823550155"
           target="_blank"
           rel="noreferrer"
-          className="flex items-center justify-center gap-2 bg-green-500 py-3 text-white transition hover:bg-green-600"
+          className="flex items-center justify-center gap-2 bg-green-500 py-2 text-white hover:bg-green-600"
         >
-          <MessageSquareMore size={18} />
+          <MessageSquareMore size={16} />
           WhatsApp
         </a>
 
@@ -73,7 +78,7 @@ const ChatWindow = ({
 
       {/* Messages */}
 
-      <div className="flex-1 overflow-y-auto bg-slate-100 px-4 py-5">
+      <div className="flex-1 overflow-y-auto bg-gray-100 px-3 py-3">
 
         {messages.map((msg, index) => (
           <Message
@@ -96,7 +101,7 @@ const ChatWindow = ({
 
       {/* Quick Buttons */}
 
-      <div className="flex gap-2 overflow-x-auto border-t bg-white px-3 py-3">
+      <div className="flex gap-2 overflow-x-auto border-t bg-white px-2 py-2">
 
         {[
           "Interior",
@@ -107,7 +112,7 @@ const ChatWindow = ({
           <button
             key={item}
             onClick={() => sendMessage(item)}
-            className="whitespace-nowrap rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700 transition-all hover:bg-emerald-600 hover:text-white"
+            className="whitespace-nowrap rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs text-emerald-700 hover:bg-emerald-600 hover:text-white"
           >
             {item}
           </button>
@@ -117,13 +122,11 @@ const ChatWindow = ({
 
       {/* Input */}
 
-      <div className="border-t bg-white p-4">
+      <div className="border-t bg-white p-3">
 
-        <div className="flex items-center gap-3 rounded-full border border-gray-300 bg-gray-100 px-3 py-2">
+        <div className="flex items-center rounded-full border bg-gray-100 px-2 py-1">
 
           <input
-            type="text"
-            placeholder="Ask something..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => {
@@ -131,14 +134,15 @@ const ChatWindow = ({
                 sendMessage();
               }
             }}
+            placeholder="Ask something..."
             className="flex-1 bg-transparent px-2 text-sm outline-none"
           />
 
           <button
             onClick={() => sendMessage()}
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-emerald-700 text-white transition-all hover:scale-105"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-600 text-white hover:bg-emerald-700"
           >
-            <Send size={18} />
+            <Send size={16} />
           </button>
 
         </div>

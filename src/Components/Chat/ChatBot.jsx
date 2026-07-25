@@ -4,10 +4,8 @@ import { MessageCircle, X } from "lucide-react";
 import ChatWindow from "./ChatWindow";
 
 const ChatBot = () => {
-
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-
   const [input, setInput] = useState("");
 
   const [messages, setMessages] = useState([
@@ -25,10 +23,9 @@ const ChatBot = () => {
     });
   }, [messages, loading]);
 
-  const Base=import.meta.env.VITE_BASE_URL
+  const Base = import.meta.env.VITE_BASE_URL;
 
   const sendMessage = async (text = input) => {
-
     if (!text.trim()) return;
 
     setMessages((prev) => [
@@ -43,13 +40,9 @@ const ChatBot = () => {
     setLoading(true);
 
     try {
-
-      const res = await axios.post(
-        `${Base}/ai/chat`,
-        {
-          message: text,
-        }
-      );
+      const res = await axios.post(`${Base}/ai/chat`, {
+        message: text,
+      });
 
       setMessages((prev) => [
         ...prev,
@@ -58,9 +51,7 @@ const ChatBot = () => {
           text: res.data.reply,
         },
       ]);
-
     } catch {
-
       setMessages((prev) => [
         ...prev,
         {
@@ -68,28 +59,26 @@ const ChatBot = () => {
           text: "Something went wrong.",
         },
       ]);
-
     }
 
     setLoading(false);
-
   };
 
   return (
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 z-[9999] group flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-emerald-700 text-white shadow-[0_15px_40px_rgba(16,185,129,.45)] transition-all duration-300 hover:scale-110 hover:rotate-6"
+        className="fixed bottom-5 right-5 z-[9999] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-emerald-700 text-white shadow-xl transition hover:scale-105"
       >
-        {open ? <X size={28} /> : <MessageCircle size={28} />}
-  
+        {open ? <X size={22} /> : <MessageCircle size={24} />}
+
         {!open && (
-          <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full border-2 border-white bg-red-500">
+          <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 border-2 border-white">
             <span className="absolute inset-0 animate-ping rounded-full bg-red-500"></span>
           </span>
         )}
       </button>
-  
+
       {open && (
         <ChatWindow
           messages={messages}
@@ -101,6 +90,7 @@ const ChatBot = () => {
         />
       )}
     </>
-  );}
+  );
+};
 
 export default ChatBot;
