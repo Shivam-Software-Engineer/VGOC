@@ -26,63 +26,78 @@ const clients = [
   "/Images/Clients/23.png",
   "/Images/Clients/24.png",
   "/Images/Clients/25.png",
-  "/Images/Clients/26.png"
+  "/Images/Clients/26.png",
 ];
 
 const OurClients = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="max-w-[1450px] mx-auto px-5">
-
         {/* Heading */}
-
-        <div
-          className="text-center mb-16"
-          data-aos="fade-down"
-        >
+        <div className="text-center mb-14" data-aos="fade-down">
           <span className="uppercase tracking-[5px] text-orange-500 font-semibold">
             Trusted By
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-4">
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 text-gray-900">
             Our Clients
           </h2>
 
           <div className="w-24 h-1 bg-orange-500 mx-auto mt-5 rounded-full"></div>
 
           <p className="text-gray-500 mt-6 max-w-2xl mx-auto leading-8">
-            We proudly serve leading companies with reliable
-            Interior, Civil, Electrical, Plumbing and Furniture
-            solutions.
+            We proudly serve leading companies with reliable Interior,
+            Civil, Electrical, Plumbing and Furniture solutions.
           </p>
         </div>
 
-        {/* Clients */}
+        {/* Carousel */}
+        <div className="relative overflow-hidden">
+          {/* Left Fade */}
+          <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+          {/* Right Fade */}
+          <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
 
-          {clients.map((logo, index) => (
-
-            <div
-              key={index}
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-              className="group bg-white/70 backdrop-blur-xl rounded-3xl border border-gray-200 shadow-lg hover:shadow-orange-200 transition-all duration-500 hover:-translate-y-3 p-8 flex items-center justify-center h-40"
-            >
-              <img
-  src={logo}
-  alt=""
-  className="max-h-20 object-contain transition-transform duration-500 group-hover:scale-110"
-/>
-            </div>
-
-          ))}
-
+          <div className="flex w-max animate-scroll gap-6">
+            {/* Double array for infinite effect */}
+            {[...clients, ...clients].map((logo, index) => (
+              <div
+                key={index}
+                className="group min-w-[170px] md:min-w-[200px] bg-white rounded-3xl border border-gray-200 shadow-md hover:shadow-orange-200 transition-all duration-500 p-6 flex items-center justify-center h-36"
+              >
+                <img
+                  src={logo}
+                  alt={`Client ${index + 1}`}
+                  className="max-h-20 w-full object-contain transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-
       </div>
 
+      {/* Custom Animation */}
+      <style>
+        {`
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+
+          .animate-scroll {
+            animation: scroll 35s linear infinite;
+          }
+
+          .animate-scroll:hover {
+            animation-play-state: paused;
+          }
+        `}
+      </style>
     </section>
   );
 };
