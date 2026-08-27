@@ -5,6 +5,7 @@ const images = [
   "/Images/1.jpeg",
   "/Images/2.jpeg",
   "/Images/3.jpeg",
+  "/Images/4.jpeg",
 ];
 
 const Carousel = () => {

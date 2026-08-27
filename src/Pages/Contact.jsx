@@ -128,21 +128,21 @@ const Contact = () => {
             {/* Social */}
             <div className="flex gap-4 mt-10">
               <a
-                href="#"
+                href="https://www.facebook.com/vgocinteriors"
                 className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition"
               >
                 <FaFacebookF />
               </a>
 
               <a
-                href="#"
+                href="https://www.instagram.com/vgoc.interiors/"
                 className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white flex items-center justify-center hover:scale-110 transition"
               >
                 <FaInstagram />
               </a>
 
               <a
-                href="#"
+                href="https://www.youtube.com/@vgoc.interiors"
                 className="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center hover:scale-110 transition"
               >
                 <FaYoutube />
@@ -219,7 +219,7 @@ const Contact = () => {
         >
           <iframe
             title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d270.36907473505687!2d72.88289380663429!3d19.285918683946353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b193ea5dc9e7%3A0x8acf9d1d4fd355d1!2sMohan%20Packers%20And%20Movers!5e0!3m2!1sen!2sin!4v1784727052417!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.9112908503953!2d72.87858017382268!3d19.286223545342025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b19599900995%3A0x100005a7acaa6536!2sVishwakarma%20group%20of%20companies!5e0!3m2!1sen!2sin!4v1787818080950!5m2!1sen!2sin"
             className="w-full h-[450px] rounded-3xl shadow-xl border-0"
             loading="lazy"
           ></iframe>
