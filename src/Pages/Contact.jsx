@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
   MapPin,
   Phone,
@@ -12,8 +12,32 @@ import {
   FaYoutube,
   FaWhatsapp,
 } from "react-icons/fa";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+
+  const form = useRef();
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs
+    .sendForm(
+      "service_9r2ick5",
+      "template_8ilcp5r",
+      form.current,
+      "xC-oe-UFUD65Hngqn"
+    )
+    .then(() => {
+      alert("Message Sent Successfully!");
+      form.current.reset();
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("Failed to send message.");
+    });
+};
   return (
    <>
 
@@ -169,33 +193,47 @@ const Contact = () => {
               Send Message
             </h2>
 
-            <form className="space-y-6">
+           <form
+  ref={form}
+  onSubmit={sendEmail}
+  className="space-y-6"
+>
               <input
                 type="text"
                 placeholder="Full Name"
+                name="name"
+required  
                 className="w-full border border-gray-200 rounded-xl px-5 py-4 outline-none focus:border-orange-500"
               />
 
               <input
                 type="email"
+                name="email"
+required
                 placeholder="Email Address"
                 className="w-full border border-gray-200 rounded-xl px-5 py-4 outline-none focus:border-orange-500"
               />
 
               <input
                 type="tel"
+                name="phone"
                 placeholder="Mobile Number"
                 className="w-full border border-gray-200 rounded-xl px-5 py-4 outline-none focus:border-orange-500"
               />
 
               <input
                 type="text"
+
+                name="subject"
+required
                 placeholder="Subject"
                 className="w-full border border-gray-200 rounded-xl px-5 py-4 outline-none focus:border-orange-500"
               />
 
               <textarea
                 rows="6"
+                name="message"
+required
                 placeholder="Write Your Message..."
                 className="w-full border border-gray-200 rounded-xl px-5 py-4 outline-none focus:border-orange-500 resize-none"
               ></textarea>
